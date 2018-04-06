@@ -1,48 +1,122 @@
 package com.kkd.farmerdetailsservice.document;
 
+
+import java.util.ArrayList;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+
+@Document(collection="farmer")
 public class Farmer {
 	
 	@Id
-	private Integer id;
-	private String name;
-	private String teamName;
-	private Long salary;
-	public Farmer(Integer id, String name, String teamName, Long salary) {
+	private String kkdFarmId;
+	private String mobileNo;
+	private String password;
+	private String alternateNo;
+	private ArrayList<String> cities;
+	private Address currentAddress;
+	private String status;
+	private boolean autoConfirm;
+	private Aadhar aadharData;
+	
+	public Farmer() {
 		super();
-		this.id = id;
-		this.name = name;
-		this.teamName = teamName;
-		this.salary = salary;
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getTeamName() {
-		return teamName;
-	}
-	public void setTeamName(String teamName) {
-		this.teamName = teamName;
-	}
-	public Long getSalary() {
-		return salary;
-	}
-	public void setSalary(Long salary) {
-		this.salary = salary;
-	}
-	
-	
 
+	public Farmer(String kkdFarmId, String mobileNo, String password, String alternateNo, ArrayList<String> cities,
+			Address currentAddress, String status, boolean autoConfirm, Aadhar aadharData) {
+		super();
+		this.kkdFarmId = kkdFarmId;
+		this.mobileNo = mobileNo;
+		this.password = password;
+		this.alternateNo = alternateNo;
+		this.cities = cities;
+		this.currentAddress = currentAddress;
+		this.status = status;
+		this.autoConfirm = autoConfirm;
+		this.aadharData = aadharData;
+	}
+
+	public String getKkdFarmId() {
+		return kkdFarmId;
+	}
+
+	public void setKkdFarmId(String kkdFarmId) {
+		this.kkdFarmId = kkdFarmId;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAlternateNo() {
+		return alternateNo;
+	}
+
+	public void setAlternateNo(String alternateNo) {
+		this.alternateNo = alternateNo;
+	}
+
+	public ArrayList<String> getCities() {
+		return cities;
+	}
+
+	public void setCities(ArrayList<String> cities) {
+		this.cities = cities;
+	}
+
+	public Address getCurrentAddress() {
+		return currentAddress;
+	}
+
+	public void setCurrentAddress(Address currentAddress) {
+		this.currentAddress = currentAddress;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public boolean isAutoConfirm() {
+		return autoConfirm;
+	}
+
+	public void setAutoConfirm(boolean autoConfirm) {
+		this.autoConfirm = autoConfirm;
+	}
+
+	public Aadhar getAadharData() {
+		return aadharData;
+	}
+
+	public void setAadharData(Aadhar aadharData) {
+		this.aadharData = aadharData;
+	}
+
+	@Override
+	public String toString() {
+		return "Farmer [kkdFarmId=" + kkdFarmId + ", mobileNo=" + mobileNo + ", password=" + password + ", alternateNo="
+				+ alternateNo + ", cities=" + cities + ", currentAddress=" + currentAddress + ", status=" + status
+				+ ", autoConfirm=" + autoConfirm + ", aadharData=" + aadharData + "]";
+	}
+	
+	
 }
