@@ -4,14 +4,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Users {
+public class Farmer {
 	
 	@Id
 	private Integer id;
 	private String name;
 	private String teamName;
 	private Long salary;
-	public Users(Integer id, String name, String teamName, Long salary) {
+	public Farmer(Integer id, String name, String teamName, Long salary) {
 		super();
 		this.id = id;
 		this.name = name;

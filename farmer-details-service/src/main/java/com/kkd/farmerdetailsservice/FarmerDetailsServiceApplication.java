@@ -17,11 +17,11 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableDiscoveryClient
-@EnableCircuitBreaker
-@EnableHystrixDashboard
-@EnableFeignClients("com.kkd.farmerdetailsservice")
-@EnableSwagger2
+//@EnableDiscoveryClient
+//@EnableCircuitBreaker
+//@EnableHystrixDashboard
+//@EnableFeignClients("com.kkd.farmerdetailsservice")
+//@EnableSwagger2
 public class FarmerDetailsServiceApplication {
 
 	public static void main(String[] args) {
@@ -30,15 +30,18 @@ public class FarmerDetailsServiceApplication {
 	}
 	
 	//For Sleuth
+	/*
     @Bean
     public Sampler defaultSampler() {
         return Sampler.ALWAYS_SAMPLE;
     }
     
-    
+    */
     //For Swagger
-    @Bean
+    /*
+	@Bean
     public Docket api() throws IOException, XmlPullParserException{
         return new Docket(DocumentationType.SWAGGER_2);
     }
+    */
 }

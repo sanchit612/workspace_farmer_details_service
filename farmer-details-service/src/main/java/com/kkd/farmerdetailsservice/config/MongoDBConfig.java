@@ -5,19 +5,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.kkd.farmerdetailsservice.repository.UserRepository;
+import com.kkd.farmerdetailsservice.document.Farmer;
+import com.kkd.farmerdetailsservice.repository.FarmerDetails;
 
-@EnableMongoRepositories(basePackageClasses = UserRepository.class)
+@EnableMongoRepositories(basePackageClasses = FarmerDetails.class)
 @Configuration
 public class MongoDBConfig {
 	
 	@Bean
-	CommandLineRunner commandLineRunner(UserRepository userRepository) {
-		return new CommandLineRunner() {
-			@Override
-			public void run(String... strings) throws Exception {
-				userRepository.save(new User(1,"Peter","Development",3000L))
-			}
+	CommandLineRunner commandLineRunner(FarmerDetails farmerDetails) {
+		return strings -> {
+			//farmerDetails.save(new Farmer(<data>);
+			//farmerDetails.save(new Farmer(<data>);
 		};
 	}
 	
