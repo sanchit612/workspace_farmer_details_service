@@ -30,36 +30,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 //@EnableHystrixDashboard
 //@EnableFeignClients("com.kkd.farmerdetailsservice")
 //@EnableSwagger2
-public class FarmerDetailsServiceApplication implements CommandLineRunner {
+public class FarmerDetailsServiceApplication{
 
-	@Autowired
-	FarmerDetailsRepository farmerDetailsRepository;
 	public static void main(String[] args) {
 		SpringApplication.run(FarmerDetailsServiceApplication.class, args);
-		
 	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		
-		
-		 String kkdFarmId;
-		 String mobileNo;
-		 String password;
-		String alternateNo;
-		 List<String> cities=new ArrayList();
-		Address currentAddress;
-		 String status;
-		 boolean autoConfirm;
-		Aadhar aadharData;
-		cities.add("dji");
-		cities.add("dji");
-		cities.add("dji");
-		//Farmer farm=new Farmer("jfhjf", "jfhjf", "jfhjf", "jfhjf", cities, null, "dghd", false, null);
-		
-		farmerDetailsRepository.save(new Farmer());
-	}
-	
 	//For Sleuth
 	/*
     @Bean

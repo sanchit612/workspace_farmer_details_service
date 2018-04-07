@@ -104,12 +104,4 @@ public class Aadhar {
 				+ dateOfBirth + ", gender=" + gender + ", fatherName=" + fatherName + ", photoUrl=" + photoUrl
 				+ ", permanentAddress=" + permanentAddress + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
