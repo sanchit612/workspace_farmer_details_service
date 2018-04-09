@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kkd.farmerdetailsservice.document.Address;
 import com.kkd.farmerdetailsservice.document.Farmer;
 import com.kkd.farmerdetailsservice.repository.FarmerDetailsRepository;
 
@@ -75,12 +76,12 @@ public class FarmerResource {
 		return farmerDetailsRepository.findById(kkdFarmId);
 	}
 	
-	/*@PutMapping("/users/addUpdate/{kkdFarmId}")
-	public String addressUpdate(@RequestBody String address,@PathVariable String kkdFarmId) {
+	@PutMapping("/users/addressUpdate/{mobileNo}")
+	public String addressUpdate(@RequestBody Address address,@PathVariable String mobileNo) {
 		
-		Optional<Farmer> farmer = farmerDetailsRepository.findById(kkdFarmId);
+		Farmer farmer = farmerDetailsRepository.findBymobileNo(mobileNo);
 		farmer.setCurrentAddress(address);
 		farmerDetailsRepository.save(farmer);
 		return "password changed successfully";
-	}*/
+	}
 }
